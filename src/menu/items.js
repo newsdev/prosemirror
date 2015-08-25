@@ -203,6 +203,8 @@ export class ImageDialog extends DialogItem {
                elt("div", null, elt("input", {name: "alt", type: "text", value: alt, autocomplete: "off",
                                               placeholder: "Description / alternative text", size: 40})),
                elt("div", null, elt("input", {name: "title", type: "text", placeholder: "Title",
+                                              size: 40, autcomplete: "off"})),
+               elt("div", null, elt("input", {name: "caption", type: "text", placeholder: "Caption",
                                               size: 40, autcomplete: "off"})))
   }
 
@@ -211,7 +213,7 @@ export class ImageDialog extends DialogItem {
     if (!elts.src.value) return
     let sel = pm.selection, tr = pm.tr
     tr.delete(sel.from, sel.to)
-    let attrs = {src: elts.src.value, alt: elts.alt.value, title: elts.title.value}
+    let attrs = {src: elts.src.value, alt: elts.alt.value, title: elts.title.value, caption: elts.caption.value }
     pm.apply(tr.insertInline(sel.from, new Span("image", attrs, null, null)))
   }
 }

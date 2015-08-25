@@ -202,6 +202,7 @@ tags.code = (dom, context) => inline(dom, context, style.code)
 tags.img = (dom, context) => {
   let attrs = {src: dom.getAttribute("src"),
                title: dom.getAttribute("title") || null,
-               alt: dom.getAttribute("alt") || null}
+               alt: dom.getAttribute("alt") || null,
+               caption: dom.getAttribute("data-caption") || null }
   context.insert(new Span("image", attrs))
 }

@@ -169,6 +169,7 @@ render.image = node => {
   dom.setAttribute("src", node.attrs.src)
   if (node.attrs.title) dom.setAttribute("title", node.attrs.title)
   if (node.attrs.alt) dom.setAttribute("alt", node.attrs.alt)
+  if (node.attrs.caption) dom.setAttribute("data-caption", node.attrs.caption)
   return dom
 }
 
